@@ -1,0 +1,35 @@
+<div class="patient-records">
+    <div class="actions">
+        <input type="text" placeholder="Search by name or department..." [(ngModel)]="searchQuery"
+            (input)="onSearch()" />
+        <button (click)="onAddPatient()" class="button button--primary">Add Patient</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Last Visit</th>
+                <th>Doctor</th>
+                <th>Department</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let patient of filteredPatients">
+                <td>{{ patient.id }}</td>
+                <td>{{ patient.name }}</td>
+                <td>{{ patient.age }}</td>
+                <td>{{ patient.lastVisit | date: 'yyyy-MM-dd' }}</td>
+                <td>{{ patient.doctor }}</td>
+                <td>{{ getDepartmentName(patient.departmentId) }}</td>
+                <td>
+                    <button class="button button--edit" (click)="onEditPatient(patient.id)">Edit</button>
+                    <button class="button button--delete" (click)="onDeletePatient(patient.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

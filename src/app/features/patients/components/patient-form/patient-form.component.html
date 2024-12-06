@@ -1,0 +1,31 @@
+<div class="patient-form">
+    <h2>{{ isEditMode ? 'Edit Patient' : 'Add Patient' }}</h2>
+    <form #patientForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Patient Name</label>
+            <input type="text" id="name" name="name" [(ngModel)]="patient.name" required />
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" [(ngModel)]="patient.age" required />
+        </div>
+        <div class="form-group">
+            <label for="lastVisit">Last Visit</label>
+            <input type="date" id="lastVisit" name="lastVisit" [(ngModel)]="patient.lastVisit" required />
+        </div>
+        <div class="form-group">
+            <label for="doctor">Doctor</label>
+            <input type="text" id="doctor" name="doctor" [(ngModel)]="patient.doctor" required />
+        </div>
+        <div class="form-group">
+            <label for="department">Department</label>
+            <select id="department" name="department" [(ngModel)]="patient.departmentId" required>
+                <option *ngFor="let dept of departments" [value]="dept.id">{{ dept.name }}</option>
+            </select>
+        </div>
+        <div class="actions">
+            <button type="submit" class="button button--primary">{{ isEditMode ? 'Update' : 'Save' }}</button>
+            <button type="button" class="button button--secondary" (click)="onCancel()">Cancel</button>
+        </div>
+    </form>
+</div>

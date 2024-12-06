@@ -1,0 +1,96 @@
+@import "../../../../../public/scss/colors/colors";
+
+// Form Container
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $color-background-light;
+}
+
+// Card Styling
+.login-card {
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px $color-shadow;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+
+  h1 {
+    font-size: 1.8rem;
+    color: $color-text-primary;
+    margin-bottom: 0.5rem;
+  }
+
+  .login-subtitle {
+    font-size: 1rem;
+    color: $color-text-secondary;
+    margin-bottom: 1.5rem;
+  }
+
+  form {
+    .form-group {
+      margin-bottom: 1.5rem;
+      text-align: left;
+
+      label {
+        color: $color-text-primary;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border: 1px solid $input-border;
+        border-radius: 4px;
+        background-color: $input-background;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+        &:focus {
+          border-color: $input-focus;
+          box-shadow: 0 0 4px $input-focus;
+          outline: none;
+        }
+
+        &::placeholder {
+          color: $color-text-secondary;
+        }
+      }
+
+      small {
+        display: block;
+        margin-top: 0.25rem;
+        color: $color-error;
+        font-size: 0.875rem;
+      }
+    }
+
+    .button {
+      &--primary {
+        background-color: $color-primary;
+        color: $color-white;
+        font-weight: bold;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: $color-primary-hover;
+        }
+
+        &:disabled {
+          background-color: lighten($color-primary, 20%);
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}

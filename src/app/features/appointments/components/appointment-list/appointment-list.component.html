@@ -1,0 +1,41 @@
+<section class="appointment-list-container">
+    <div class="header">
+        <h2>Appointments</h2>
+        <button routerLink="/appointments/add" class="button button--primary">+ Add Appointment</button>
+    </div>
+
+    <!-- Loading Spinner or Error Message -->
+    <div *ngIf="loading">Loading appointments...</div>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+    <table class="table" *ngIf="!loading && !errorMessage">
+        <thead>
+            <tr>
+                <th>Patient Name</th>
+                <th>Doctor Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let appointment of appointments">
+                <td>{{ appointment.patientName }}</td>
+                <td>{{ appointment.doctor }}</td>
+                <td>{{ appointment.date }}</td>
+                <td>{{ appointment.time }}</td>
+                <td><span class="status {{ appointment.status | lowercase }}">{{ appointment.status }}</span></td>
+                <td>
+                    <button routerLink="/appointments/edit/{{ appointment.id }}" class="action-button edit">
+                        Edit
+                    </button>
+                    <button (click)="deleteAppointment(appointment.id)" class="action-button delete">
+                        Delete
+                    </button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</section>

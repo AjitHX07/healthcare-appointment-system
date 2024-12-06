@@ -1,0 +1,15 @@
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+svg {
+  overflow: visible;
+}
+
+.arc path {
+  stroke: #fff;
+  stroke-width: 2px;
+}

@@ -1,0 +1,24 @@
+<div class="department-overview-container" *ngIf="!isLoading; else loading">
+    <h2 class="overview-title">Department Overview</h2>
+
+    <div class="chart-and-cards">
+
+
+        <!-- Cards Section -->
+        <div class="cards-section">
+            <div *ngFor="let dept of departmentData" class="department-card">
+                <h3 class="department-name">{{ dept.name }}</h3>
+                <p class="patient-count">{{ dept.patientCount }} Patients</p>
+            </div>
+        </div>
+
+        <!-- Pie Chart Section -->
+        <div class="chart-section">
+            <app-pie [departmentData]="departmentData"></app-pie>
+        </div>
+    </div>
+</div>
+
+<ng-template #loading>
+    <p>Loading department overview...</p>
+</ng-template>

@@ -1,0 +1,192 @@
+@import "../../../../../../public/scss/colors/colors";
+
+.patient-records {
+  padding: 2rem;
+  background-color: $color-background-light;
+  min-height: 100vh;
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    input[type="text"] {
+      padding: 1rem;
+      font-size: 1.1rem;
+      border: 1px solid $color-accent;
+      border-radius: 8px;
+      width: 50%;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:focus {
+        border-color: $color-primary;
+        box-shadow: 0 0 5px rgba(0, 119, 182, 0.5);
+        outline: none;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
+      &.button--primary {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &:hover {
+          background-color: $color-primary-hover;
+          transform: scale(1.05);
+        }
+      }
+
+      &.button--edit {
+        background-color: $color-accent;
+        color: $color-white;
+
+        &:hover {
+          background-color: $color-accent-hover;
+          transform: scale(1.05);
+        }
+      }
+
+      &.button--delete {
+        background-color: $color-secondary;
+        color: $color-white;
+
+        &:hover {
+          background-color: darken($color-secondary, 10%);
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: $color-white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    th,
+    td {
+      padding: 1rem;
+      text-align: left;
+      font-size: 1rem;
+      color: $color-text-primary;
+    }
+
+    th {
+      background-color: $color-primary;
+      color: $color-white;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    tr {
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $color-background-soft;
+        cursor: pointer;
+      }
+
+      td {
+        font-size: 1rem;
+        color: $color-text-secondary;
+      }
+    }
+
+    td button {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 0.5rem;
+
+      &.button--edit {
+        background-color: $color-accent;
+        color: $color-white;
+
+        &:hover {
+          background-color: $color-accent-hover;
+        }
+      }
+
+      &.button--delete {
+        background-color: $color-secondary;
+        color: $color-white;
+
+        &:hover {
+          background-color: darken($color-secondary, 10%);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+
+    .actions {
+      flex-direction: column;
+      align-items: stretch;
+
+      input[type="text"] {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 0.5rem;
+      }
+    }
+
+    table {
+      font-size: 0.9rem;
+      th,
+      td {
+        padding: 0.8rem;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+
+    .actions {
+      input[type="text"] {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+      }
+
+      button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    table {
+      font-size: 0.8rem;
+      th,
+      td {
+        padding: 0.7rem;
+      }
+
+      td button {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

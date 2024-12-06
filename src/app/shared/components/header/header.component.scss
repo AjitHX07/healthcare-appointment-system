@@ -1,0 +1,135 @@
+@import "../../../../../public/scss/colors/colors";
+
+// Colors
+$background-color: #ffffff;
+$text-color: #333333;
+$accent-color: #007bff;
+$button-color: #f4f4f4;
+$button-hover-color: #007bff;
+$button-hover-text: #ffffff;
+
+// Header Styling
+header {
+  background-color: $background-color;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+}
+
+#logoutButton {
+  background-color: #dc3545; /* Red background */
+  color: white;
+  border: 1px solid #dc3545;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+  }
+}
+// Navigation Bar
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+
+  .logo-img {
+    width: 4rem;
+  }
+
+  // Hamburger Menu
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: $text-color;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    &.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    &.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+
+  // Navigation Links
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    li {
+      a {
+        text-decoration: none;
+        color: $text-color;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $accent-color;
+        }
+
+        &.btn-secondary {
+          background-color: $button-color;
+          color: $text-color;
+          border: 1px solid $text-color;
+          padding: 0.5rem 1rem;
+          border-radius: 20px;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: $button-hover-color;
+            color: $button-hover-text;
+            border-color: $button-hover-color;
+          }
+        }
+      }
+    }
+
+    // Mobile Responsiveness
+    @media (max-width: 768px) {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: $background-color;
+      width: 100%;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      gap: 1rem;
+
+      &.active {
+        display: flex;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+  }
+}

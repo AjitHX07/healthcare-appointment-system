@@ -1,0 +1,78 @@
+<article class="dashboard-container">
+
+
+    <!-- Main Content -->
+    <main class="content">
+        <header class="content-header">
+            <h2>Hello, Doctor!</h2>
+            <p>Here’s a brief update on your schedule and patient information.</p>
+        </header>
+
+        <!-- Quick Stats Section -->
+        <section class="quick-stats">
+            <div class="card">
+                <h3>Total Appointments</h3>
+                <p>{{ totalAppointments }}</p>
+            </div>
+            <div class="card">
+                <h3>Pending Appointments</h3>
+                <p>{{ pendingAppointments }}</p>
+            </div>
+            <div class="card">
+                <h3>Patients Today</h3>
+                <p>{{ patientsToday }}</p>
+            </div>
+        </section>
+
+        <!-- Upcoming Appointments -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Upcoming Appointments</h2>
+                <button routerLink="/appointments" class="button button--primary">+ Add Appointment</button>
+            </div>
+            <div *ngIf="appointments.length > 0; else noAppointments">
+                <div class="cards-grid">
+                    <div class="card appointment-card" *ngFor="let appointment of appointments">
+                        <h3>{{ appointment.patientName }}</h3>
+                        <p>Doctor: {{ appointment.doctor }}</p>
+                        <p>Date: {{ appointment.date }}</p>
+                        <p>Status: <span class="status" [class]="appointment.status.toLowerCase()">{{ appointment.status
+                                }}</span></p>
+                    </div>
+                </div>
+            </div>
+            <ng-template #noAppointments>
+                <p>No upcoming appointments found.</p>
+            </ng-template>
+        </section>
+
+        <!-- Recent Patients -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Recent Patients</h2>
+                <button routerLink="/patients" class="button button--secondary">+ Add Patient</button>
+            </div>
+            <div *ngIf="patients.length > 0; else noPatients">
+                <div class="cards-grid">
+                    <div class="card patient-card" *ngFor="let patient of patients.slice(0, 5)">
+                        <h3>{{ patient.name }}</h3>
+                        <p>Age: {{ patient.age }}</p>
+                        <p>Last Visit: {{ patient.lastVisit | date: 'yyyy-MM-dd' }}</p>
+                        <p>Doctor: {{ patient.doctor }}</p>
+                    </div>
+                </div>
+            </div>
+            <ng-template #noPatients>
+                <p>No recent patients found.</p>
+            </ng-template>
+        </section>
+
+        <!-- Data Visualization -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Appointments by Doctor</h2>
+            </div>
+            <app-charts></app-charts>
+        </section>
+    </main>
+</article>

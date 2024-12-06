@@ -1,0 +1,40 @@
+<article class="login-container">
+    <section class="login-card">
+        <h1>Login</h1>
+        <p class="login-subtitle">Please sign in to continue</p>
+
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input [(ngModel)]="login.username" type="text" id="username" #email="ngModel" required name="username"
+                    placeholder="Enter your username" />
+                @if (email.invalid && (email.dirty || email.touched)) {
+                <small>
+                    @if (email.hasError('required')) {
+                    <span class="error-msg">Username is required</span>
+
+                    }
+                </small>
+                }
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" [(ngModel)]="login.password" required name="password" #password="ngModel"
+                    id="password" placeholder="Enter your password" />
+
+
+                <small *ngIf="password.invalid && (password.dirty || password.touched)">
+                    <span class="error-msg" *ngIf="password.errors?.['required']">
+                        Password is required.
+                    </span>
+                </small>
+
+            </div>
+
+            <button type="submit" class="button button--primary" [disabled]="loginForm.invalid">
+                Submit
+            </button>
+        </form>
+    </section>
+</article>

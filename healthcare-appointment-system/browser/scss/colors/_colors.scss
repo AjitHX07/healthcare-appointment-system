@@ -1,0 +1,86 @@
+// Primary Colors
+$color-primary: #4caf50; // Emerald Green (Primary Buttons, Success States)
+$color-primary-hover: #388e3c; // Darker Green for hover states
+$color-secondary: #ffb74d; // Amber (Secondary Buttons)
+$color-secondary-hover: #f57c00; // Dark Amber for hover states
+$color-accent: #3a86ff; // Cornflower Blue (Links, Highlights)
+$color-accent-hover: #76b1ff; // Lighter Blue for hover states
+
+// Feedback Colors
+$color-error: #ff5252; // Bright Red (Error Messages)
+$color-success: #4caf50; // Emerald Green (Success Messages)
+$color-info: #40c4ff; // Aqua Blue (Focus States, Info Messages)
+
+// Neutral Colors
+$color-text-primary: #333333; // Dark Gray for primary text
+$color-text-secondary: #666666; // Light Gray for secondary text
+$color-border: #e0e0e0; // Light Gray for borders and dividers
+$color-background-light: #f5f5f5; // Soft Gray for light mode backgrounds
+$color-background-dark: #1c1c1e; // Charcoal Black for dark mode backgrounds
+$color-background-soft: #fafafa; // Light background for tables/rows
+$color-white: #ffffff; // White for cards and backgrounds
+
+// Special Colors
+$color-shadow: rgba(
+  0,
+  0,
+  0,
+  0.1
+); // Subtle shadow for cards and elevated elements
+
+// Form States
+$input-border: $color-border; // Default border for input fields
+$input-focus: $color-info; // Aqua Blue for focused inputs
+$input-background: $color-white; // White for input backgrounds
+
+// Table Alternating Rows
+$table-row-light: $color-background-soft; // Alternating light row
+$table-row-dark: $color-white; // Alternating dark row
+
+//footer color
+$footer-backgroud: #f2f7f6;
+
+// Updated Primary Colors
+$color-primary: #4caf50; // Emerald Green
+$color-primary-hover: #388e3c; // Darker Green
+$color-secondary: #ffb74d; // Amber
+$color-secondary-hover: #f57c00; // Dark Amber
+$color-accent: #3a86ff; // Cornflower Blue
+$color-accent-hover: #76b1ff; // Lighter Blue
+
+// Updated Feedback Colors
+$color-error: #ff5252; // Bright Red
+$color-success: #4caf50; // Emerald Green
+$color-info: #40c4ff; // Aqua Blue
+
+// Updated Neutral Colors
+$color-text-primary: #333333; // Dark Gray
+$color-text-secondary: #666666; // Light Gray
+$color-border: #e0e0e0; // Light Gray
+$color-background-light: #f5f5f5; // Soft Gray
+$color-background-dark: #1c1c1e; // Charcoal Black
+$color-background-soft: #fafafa; // Light background
+$color-white: #ffffff; // White
+
+// New Color Variables
+$color-primary: #ff6f61; // Soft Coral (Buttons, Highlights)
+$color-primary-hover: #ff4f47; // Darker Coral for hover states
+$color-secondary: #00b8d4; // Cool Teal (Hover effects, accents)
+$color-secondary-hover: #008c99; // Darker Teal for hover states
+$color-background-light: #f4f7fa; // Light Greyish Blue for background
+$color-text-primary: #333333; // Dark Charcoal for main text
+$color-text-secondary: #555555; // Soft Grey for secondary text
+$color-error: #ff3b30; // Soft Red for error messages and delete buttons
+$color-white: #ffffff; // White for text and card background
+$color-border: #e0e0e0; // Light Grey for borders
+
+$color-primary: #0077b6; // Vibrant Blue
+$color-primary-hover: #005f8b; // Darker Blue for hover effects
+$color-accent: #00bfae; // Teal
+$color-accent-hover: #00a193; // Darker Teal for hover effects
+$color-secondary: #ff6b6b; // Coral Red for delete actions
+$color-background-light: #f7f7f7; // Light Beige
+$color-background-dark: #333333; // Dark Grey for text
+$color-text-primary: #1a1a1a; // Almost black text for high readability
+$color-text-secondary: #777777; // Lighter text for secondary information
+$color-white: #ffffff; // White for clean backgrounds and elements

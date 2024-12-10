@@ -113,6 +113,12 @@ This project is licensed under the [MIT License](LICENSE).
 - **Inspiration**: Thanks to the open-source community for their continuous innovation and support.
 - **Libraries**: Special thanks to Angular for its robust framework, D3.js and RxJs for its stylish utility-first approach.
 
+## Deployment
+
+Vercel : https://healthcare-appointment-system-jlyd69zxt.vercel.app/login & **Run npx json-server db.json** on vs code
+
+Netilify : https://kaleidoscopic-brigadeiros-6efc79.netlify.app & **Run npx json-server db.json** on vs code
+
 ## Contact
 
 For any questions or support, please reach out:

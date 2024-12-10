@@ -1,5 +1,7 @@
 # Healthcare Appointment Management System
 
+Live site : https://healthcare-appointment-system-jlyd69zxt.vercel.app/login
+
 **A comprehensive system for managing healthcare appointments, patient records, and department overviews.**  
 This project is built using **Angular**, **RxJS**, and **JSON Server**, focusing on scalability and user-friendliness.
 

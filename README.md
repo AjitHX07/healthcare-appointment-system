@@ -70,15 +70,7 @@ npx json-server db.json
 
 ```
 
-### **4. Start the JSON server:**
-
-```bash
-
-npx json-server db.json
-
-```
-
-### **5. Start the Angular development server:**
+### **4. Start the Angular development server:**
 
 ```bash
 
@@ -86,7 +78,7 @@ ng serve
 
 ```
 
-### **6. Open the application in your browser:**
+### **5. Open the application in your browser:**
 
 ```bash
 
@@ -94,7 +86,7 @@ http://localhost:4200
 
 ```
 
-### **7. Login Username :**
+### **6. Login Username :**
 
 ```bash
 

@@ -48,9 +48,79 @@ This project is built using **Angular**, **RxJS**, and **JSON Server**, focusing
 ### **1. Clone the Repository**
 
 ```bash
+
 git clone https://github.com/yourusername/healthcare-management-system.git
 cd healthcare-management-system
 
+```
 
 ### **2. Install Dependencies**
+
+```bash
+
+npm install
+
 ```
+
+### **3. Start the JSON server**
+
+```bash
+
+npx json-server db.json
+
+```
+
+### **4. Start the JSON server:**
+
+```bash
+
+npx json-server db.json
+
+```
+
+### **5. Start the Angular development server:**
+
+```bash
+
+ng serve
+
+```
+
+### **6. Open the application in your browser:**
+
+```bash
+
+http://localhost:4200
+
+```
+
+### **7. Login Username :**
+
+```bash
+
+doctor1
+
+```
+
+### **7. Login Username :**
+
+```bash
+
+password123
+
+```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- **Inspiration**: Thanks to the open-source community for their continuous innovation and support.
+- **Libraries**: Special thanks to Angular for its robust framework, D3.js and RxJs for its stylish utility-first approach.
+
+## Contact
+
+For any questions or support, please reach out:
+
+- **Email**: ajith.santhosh.mailbox@gmail.com

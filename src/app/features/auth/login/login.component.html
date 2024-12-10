@@ -6,11 +6,11 @@
         <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input [(ngModel)]="login.username" type="text" id="username" #email="ngModel" required name="username"
-                    placeholder="Enter your username" />
-                @if (email.invalid && (email.dirty || email.touched)) {
+                <input [(ngModel)]="login.username" type="text" id="username" #username="ngModel" required
+                    name="username" placeholder="Enter your username" />
+                @if (username.invalid && (username.dirty || username.touched)) {
                 <small>
-                    @if (email.hasError('required')) {
+                    @if (username.hasError('required')) {
                     <span class="error-msg">Username is required</span>
 
                     }

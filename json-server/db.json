@@ -29,62 +29,22 @@
   ],
   "patients": [
     {
-      "id": "1",
-      "name": "revi",
-      "age": 22,
-      "lastVisit": "2024-12-26",
-      "doctor": "manu",
-      "departmentId": "2"
-    },
-    {
-      "id": "2",
-      "name": "ram",
+      "id": 1,
+      "name": "Ajith santhosh",
       "age": 23,
-      "lastVisit": "2024-12-10",
-      "doctor": "dr.manu",
+      "lastVisit": "2024-12-04",
+      "doctor": "Dr.manu",
       "departmentId": "2"
-    },
-    {
-      "id": "3",
-      "name": "devi",
-      "age": 24,
-      "lastVisit": "2024-12-18",
-      "doctor": "sree",
-      "departmentId": "3"
-    },
-    {
-      "id": "4",
-      "name": "roy",
-      "age": 60,
-      "lastVisit": "2024-12-10",
-      "doctor": "dr.Sid",
-      "departmentId": "1"
     }
   ],
   "appointments": [
     {
-      "id": "d79d",
-      "patientId": "2",
-      "doctor": "dr.ravi",
-      "date": "2024-12-18",
-      "time": "22:02",
+      "id": "d479",
+      "patientId": "1",
+      "doctor": "Dr.manu",
+      "date": "2024-12-12",
+      "time": "11:01",
       "status": "Confirmed"
-    },
-    {
-      "id": "3711",
-      "patientId": "4",
-      "doctor": "avani",
-      "date": "2024-12-04",
-      "time": "04:44",
-      "status": "Pending"
-    },
-    {
-      "id": "c45e",
-      "patientId": "3",
-      "doctor": "Nancy ",
-      "date": "2024-12-24",
-      "time": "04:54",
-      "status": "Pending"
     }
   ]
 }

@@ -21,6 +21,7 @@ export class AppointmentFormComponent implements OnInit {
   errorMessage = '';
   successMessage = '';
 
+
   constructor(
     private fb: FormBuilder,
     private appointmentService: AppointmentService,
@@ -32,13 +33,12 @@ export class AppointmentFormComponent implements OnInit {
     this.initializeForm();
     this.fetchPatients();
 
-    // Use paramMap instead of directly accessing params
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      const id = params.get('id');
-      if (id) {
-        this.appointmentId = id; // Directly use the string ID
+    // Check if this is an edit mode by getting the ID from the route
+    this.route.paramMap.subscribe((params) => {
+      this.appointmentId = params.get('id');
+      if (this.appointmentId) {
         this.isEdit = true;
-        this.loadAppointment(id);
+        this.loadAppointment(this.appointmentId);
       }
     });
   }
@@ -46,20 +46,19 @@ export class AppointmentFormComponent implements OnInit {
   initializeForm(): void {
     this.appointmentForm = this.fb.group({
       patientId: ['', Validators.required],
-      doctor: ['', Validators.required],
+      doctor: ['', Validators.required], // Doctor input field
       date: ['', Validators.required],
       time: ['', Validators.required],
       status: ['Pending', Validators.required],
     });
   }
-  //fetching patients
+
   fetchPatients(): void {
     this.appointmentService.getPatients().subscribe({
       next: (data) => (this.patients = data),
       error: () => (this.errorMessage = 'Failed to fetch patients'),
     });
   }
-  //loading the  updating appointment  
 
   loadAppointment(id: string): void {
     this.appointmentService.getAppointmentById(id).subscribe({
@@ -70,54 +69,46 @@ export class AppointmentFormComponent implements OnInit {
             doctor: appointment.doctor,
             date: appointment.date,
             time: appointment.time,
-            status: appointment.status
+            status: appointment.status,
           });
         } else {
           this.errorMessage = 'Appointment not found';
         }
       },
-      error: (error) => {
-        console.error('Failed to load appointment', error);
+      error: () => {
         this.errorMessage = 'Failed to load appointment';
-      }
+      },
     });
   }
-  //handling form submission,
+
   onSubmit(): void {
     if (this.appointmentForm.invalid) {
       this.errorMessage = 'Please fill out all required fields';
       return;
     }
 
-    const appointmentData = {
-      ...this.appointmentForm.value,
-      id: this.appointmentId // Use the existing ID for update
-    };
+    const appointmentData = { ...this.appointmentForm.value, id: this.appointmentId };
 
     if (this.isEdit && this.appointmentId) {
       this.appointmentService.updateAppointment(this.appointmentId, appointmentData).subscribe({
-        next: () => this.handleSuccess('Appointment updated successfully'),
-        error: (error) => {
-          console.error('Update error', error);
-          this.errorMessage = 'Failed to update appointment';
-        }
+        next: () => {
+          alert('Appointment updated successfully.');
+          this.router.navigate(['/appointments']);
+        },
+        error: () => {
+          alert('Failed to update appointment.');
+        },
       });
     } else {
       this.appointmentService.addAppointment(appointmentData).subscribe({
-        next: () => this.handleSuccess('Appointment added successfully'),
-        error: (error) => {
-          console.error('Add error', error);
-          this.errorMessage = 'Failed to add appointment';
-        }
+        next: () => {
+          alert('Appointment added successfully.');
+          this.router.navigate(['/appointments']);
+        },
+        error: () => {
+          alert('Failed to add appointment.');
+        },
       });
     }
-  }
-
-  handleSuccess(message: string): void {
-    this.successMessage = message;
-    setTimeout(() => {
-      this.successMessage = '';
-      this.router.navigate(['/appointments']);
-    }, 2000);
   }
 }

@@ -1,76 +1,56 @@
-# 🏥 Healthcare Appointment Management System
+# Healthcare Appointment Management System
 
-A comprehensive web application designed to streamline healthcare operations through efficient appointment management and patient record keeping.
-
-## Table of Contents
-
-- [About](#about)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [API Documentation](#api-documentation)
-- [Contributing](#contributing)
-- [License](#license)
+**A comprehensive system for managing healthcare appointments, patient records, and department overviews.**  
+This project is built using **Angular**, **RxJS**, and **JSON Server**, focusing on scalability and user-friendliness.
 
 ---
 
-## About
-
-Our Healthcare Appointment Management System is built to cater to the needs of medical professionals and administrative staff. It provides a user-friendly interface for managing appointments, patient records, and departmental insights.
-
 ## 🚀 Features
 
-- Secure Authentication
-- Login page with username/password validation
-- Default credentials: doctor1 / password123
+### ✅ **Core Functionalities**
 
-Appointment Management
+- **Appointments Management**:
 
-Create, edit, and delete appointments
-Real-time table updates
+  - Create, edit, and delete appointments.
+  - Associate appointments with patients and doctors.
+  - Track appointment status (e.g., Pending, Completed).
 
-Patient Records
+- **Patient Records Management**:
 
-Comprehensive patient information tracking
-Advanced search functionality
+  - Add, update, and delete patient information.
+  - Assign doctors to patients dynamically.
 
-Department Insights
+- **Department Overview**:
+  - List of departments with the number of patients in each.
 
-Department-wise patient distribution
-Visual data representations
+### 📊 **Data Visualization**
 
-💻 Tech Stack
+- Bar chart displaying the number of appointments per doctor using **D3.js**.
 
-Angular
-TypeScript
-D3.js
-JSON Server
+### 🔒 **Authentication and Routing**
 
-📂 Project Structure
-Modules
+- Login functionality for secure access.
+- Guards to restrict unauthorized access to protected routes.
 
-Authentication Module
+---
 
-Secure login interface
-CanActivate route guard
+## 🛠️ **Tech Stack**
 
-Appointments Module
+- **Frontend**: Angular 18
+- **Backend**: JSON Server (for mock API)
+- **Visualization**: D3.js
+- **Styling**: SCSS and Bootstrap
 
-Appointment tracking
-CRUD operations
+---
 
-Patient Records Module
+## 🔧 **Setup Instructions**
 
-Patient data management
-Search capabilities
+### **1. Clone the Repository**
 
-Department Overview Module
+```bash
+git clone https://github.com/yourusername/healthcare-management-system.git
+cd healthcare-management-system
 
-Patient distribution visualization
 
-🛠 Setup Instructions
-Prerequisites
-
-Node.js (v16+)
-Angular CLI
-JSON Server
+### **2. Install Dependencies**
+```

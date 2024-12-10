@@ -12,7 +12,13 @@ import { routes } from '../../../app.routes';
 export class HeaderComponent {
 
   constructor(private Router: Router) { }
+  logout(): void {
+    // Remove the user information from localStorage
+    localStorage.removeItem('user');
 
+    // Redirect the user to the login page
+    this.Router.navigate(['/login']);
+  }
   isMenuOpen = false;
 
   toggleMenu() {

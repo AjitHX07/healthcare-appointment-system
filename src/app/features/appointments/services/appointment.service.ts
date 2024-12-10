@@ -32,14 +32,16 @@ export class AppointmentService {
   getAppointmentsWithPatients(): Observable<Appointment[]> {
     return forkJoin({
       appointments: this.getAppointments(),
-      patients: this.http.get<Patient[]>(`${this.apiUrl}/patients`),
+      patients: this.getPatients(),
     }).pipe(
       map(({ appointments, patients }) =>
         appointments.map((appointment) => {
-          const patient = patients.find((p) => p.id === appointment.patientId);
+          const patient = appointment.patientId
+            ? patients.find((p) => p.id.toString() === appointment.patientId!.toString()) // Safely handle patientId
+            : null;
           return {
             ...appointment,
-            patientName: patient ? patient.name : 'Unknown', // Proper mapping
+            patientName: patient ? patient.name : 'Unknown', // Assign patient name or 'Unknown'
           };
         })
       ),
@@ -53,10 +55,6 @@ export class AppointmentService {
 
   getAppointmentById(id: string): Observable<Appointment | null> {
     return this.http.get<Appointment>(`${this.apiUrl}/appointments/${id}`).pipe(
-      map(appointment => appointment ? {
-        ...appointment,
-        patientName: appointment.patientName || 'Unknown'
-      } : null),
       catchError((error) => {
         console.error('Error fetching appointment', error);
         return of(null);
@@ -69,7 +67,8 @@ export class AppointmentService {
   }
 
   addAppointment(appointment: Appointment): Observable<Appointment> {
-    return this.http.post<Appointment>(`${this.apiUrl}/appointments`, appointment);
+    const cleanAppointment = { ...appointment, id: undefined };
+    return this.http.post<Appointment>(`${this.apiUrl}/appointments`, cleanAppointment);
   }
 
   updateAppointment(id: string, appointment: Appointment): Observable<Appointment> {
@@ -77,6 +76,11 @@ export class AppointmentService {
   }
 
   deleteAppointment(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/appointments/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/appointments/${id}`).pipe(
+      catchError((error) => {
+        console.error('Failed to delete appointment:', error);
+        return of();
+      })
+    );
   }
 }

@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of, shareReplay, throwError } from 'rxjs';
 import { Patient } from '../models/patient';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PatientService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = environment.url;
   private departmentCache$: Observable<{ id: number; name: string }[]> | null = null;
 
   constructor(private http: HttpClient) { }

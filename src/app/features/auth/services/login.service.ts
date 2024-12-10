@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { ApiService } from '../../../core/services/api.service';
 import { Router } from '@angular/router';
 import { catchError, map, Observable, throwError } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  private baseUrl = 'http://localhost:3000/users';
+  private baseUrl = environment.url;
 
   constructor(private apiService: ApiService, private router: Router) { }
 

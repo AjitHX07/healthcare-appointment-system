@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, forkJoin, map, Observable, of } from 'rxjs';
 import { Appointment, } from '../models/appointment';
 import { Patient } from '../../patients/models/patient';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { Patient } from '../../patients/models/patient';
 export class AppointmentService {
 
 
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = environment.url;
 
   constructor(private http: HttpClient) { }
 

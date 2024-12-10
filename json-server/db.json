@@ -29,11 +29,19 @@
   ],
   "patients": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Ajith santhosh",
       "age": 23,
       "lastVisit": "2024-12-04",
       "doctor": "Dr.manu",
+      "departmentId": "2"
+    },
+    {
+      "id": 2,
+      "name": "devan",
+      "age": 21,
+      "lastVisit": "2024-12-04",
+      "doctor": "shibu",
       "departmentId": "2"
     }
   ],

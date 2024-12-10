@@ -9,6 +9,7 @@ import { environment } from '../../../../environments/environment';
 })
 export class PatientService {
   private apiUrl = environment.url;
+  // private apiUrl = "http://localhost:3000";
   private departmentCache$: Observable<{ id: number; name: string }[]> | null = null;
 
   constructor(private http: HttpClient) { }

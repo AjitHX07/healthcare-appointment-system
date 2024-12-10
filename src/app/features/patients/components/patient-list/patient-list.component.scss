@@ -1,4 +1,45 @@
-@import "../../../../../../public/scss/colors/colors";
+// Color Palette
+
+// Primary Colors
+$color-primary: #0077b6; // Vibrant Blue
+$color-primary-hover: #005f8b; // Darker Blue for hover effects
+
+// Secondary Colors
+$color-secondary: #ff6b6b; // Coral Red for delete actions
+$color-secondary-hover: #ff4f47; // Darker Coral for hover states
+
+// Accent Colors
+$color-accent: #00bfae; // Teal
+$color-accent-hover: #00a193; // Darker Teal for hover effects
+
+// Feedback Colors
+$color-error: #ff3b30; // Soft Red for error messages
+$color-success: #4caf50; // Emerald Green for success states
+$color-info: #40c4ff; // Aqua Blue for informational states
+
+// Neutral Colors
+$color-text-primary: #1a1a1a; // Almost black text for high readability
+$color-text-secondary: #777777; // Lighter text for secondary information
+$color-border: #e0e0e0; // Light Grey for borders
+$color-background-light: #f7f7f7; // Light Beige background
+$color-background-dark: #333333; // Dark Grey for dark mode
+$color-background-soft: #fafafa; // Soft background for subtle separation
+$color-white: #ffffff; // White for clean backgrounds
+
+// Special Colors
+$color-shadow: rgba(0, 0, 0, 0.1); // Subtle shadow for elevated elements
+
+// Form States
+$input-border: $color-border;
+$input-focus: $color-info;
+$input-background: $color-white;
+
+// Table Alternating Rows
+$table-row-light: $color-background-soft;
+$table-row-dark: $color-white;
+
+// Footer
+$footer-background: #f2f7f6;
 
 .patient-records {
   padding: 2rem;

@@ -12,6 +12,8 @@ export class AppointmentService {
 
 
   private apiUrl = environment.url;
+  // private apiUrl = "http://localhost:3000";
+
 
   constructor(private http: HttpClient) { }
 

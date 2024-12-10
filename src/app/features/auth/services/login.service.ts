@@ -9,27 +9,29 @@ import { environment } from '../../../../environments/environment';
 })
 export class LoginService {
   private baseUrl = environment.url;
+  // private baseUrl = "http://localhost:3000";
+
 
   constructor(private apiService: ApiService, private router: Router) { }
 
   login(username: string, password: string): Observable<boolean> {
-    const url = `${this.baseUrl}?username=${username}&password=${password}`;
+    const url = `${this.baseUrl}/users?username=${username}&password=${password}`;
 
     return this.apiService.get<any[]>(url).pipe(
       map((users) => {
         if (users.length > 0) {
-          // Save user info to localStorage
           localStorage.setItem('user', JSON.stringify(users[0]));
           return true;
         }
-        return false; // Invalid credentials
+        return false;
       }),
-      catchError((err) => {
-        console.error('Login error:', err);
+      catchError((error) => {
+        console.error('Login error:', error);
         return throwError(() => new Error('Login failed.'));
       })
     );
   }
+
 
   logout(): void {
     localStorage.removeItem('user');
